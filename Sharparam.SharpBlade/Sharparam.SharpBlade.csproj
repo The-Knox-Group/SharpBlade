@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C390908-D634-4450-9804-71D4929DD392}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sharparam.SharpBlade</RootNamespace>
+    <AssemblyName>Sharparam.SharpBlade</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\Debug\Sharparam.SharpBlade.XML</DocumentationFile>
+    <RegisterForComInterop>false</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\libs\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DynamicKeySettings.cs" />
+    <Compile Include="Extensions\EnumerationExtensions.cs" />
+    <Compile Include="Helpers\IO.cs" />
+    <Compile Include="Helpers\Threading.cs" />
+    <Compile Include="Integration\EmbeddedWinFormsControl.cs" />
+    <Compile Include="Integration\KeyboardControl.cs" />
+    <Compile Include="Integration\Renderer.cs" />
+    <Compile Include="Logging\LogManager.cs" />
+    <Compile Include="ModifierKeys.cs" />
+    <Compile Include="Native\Helpers.cs" />
+    <Compile Include="Native\HRESULT.cs" />
+    <Compile Include="Native\WinAPI.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Native\RazerAPI.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Razer\DynamicKey.cs" />
+    <Compile Include="Razer\Events\AppEventEventArgs.cs" />
+    <Compile Include="Razer\Events\FlickEventArgs.cs" />
+    <Compile Include="Razer\Events\KeyboardCharEventArgs.cs" />
+    <Compile Include="Razer\Events\DynamicKeyEventArgs.cs" />
+    <Compile Include="Razer\Events\GestureEventArgs.cs" />
+    <Compile Include="Razer\Events\KeyboardKeyEventArgs.cs" />
+    <Compile Include="Razer\Events\KeyboardRawEventArgs.cs" />
+    <Compile Include="Razer\Events\MoveEventArgs.cs" />
+    <Compile Include="Razer\Events\PressEventArgs.cs" />
+    <Compile Include="Razer\Events\ReleaseEventArgs.cs" />
+    <Compile Include="Razer\Events\RotateEventArgs.cs" />
+    <Compile Include="Razer\Events\TapEventArgs.cs" />
+    <Compile Include="Razer\Events\ZoomEventArgs.cs" />
+    <Compile Include="Razer\Exceptions\RazerDynamicKeyException.cs" />
+    <Compile Include="Razer\Exceptions\RazerException.cs" />
+    <Compile Include="Razer\Exceptions\RazerNativeException.cs" />
+    <Compile Include="Razer\Exceptions\RazerUnstableShutdownException.cs" />
+    <Compile Include="Razer\RazerManager.cs" />
+    <Compile Include="Razer\RotateDirection.cs" />
+    <Compile Include="Razer\Structs\RenderStats.cs" />
+    <Compile Include="Razer\Touchpad.cs" />
+    <Compile Include="Razer\ZoomDirection.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Integration\RzSwitchbladeSDK2.lib" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RzSwitchbladeSDK2.lib" />
+    <None Include="Service References\RzSwitchbladeSDK2.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="RICHVIDEOLib">
+      <Guid>{D37B5B2C-8D1B-4832-89E4-6FCE903B3A18}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RLRECORDWAVELib">
+      <Guid>{52C6D8F7-3E95-41AC-9E0E-45515531F532}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RzAppManagerLib">
+      <Guid>{BB116398-D990-4F63-8C1E-705BF3DA5849}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="rzaudiodlllib">
+      <Guid>{56271732-166A-4FBD-95FA-93E8940EEE79}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="rzdetmgrlib">
+      <Guid>{D67AECD9-D26F-4E6F-832F-8831580B3A3B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="RzSwitchBladeLib">
+      <Guid>{183A6811-C716-46A4-8F30-6DB70AE76F16}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SDKDBLib">
+      <Guid>{162BCF81-1629-4F88-A4A4-80BDF10F9B70}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FunctionTest.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_UseGlobalSettings="False" BuildVersion_BuildVersioningStyle="None.None.Increment.TimeStamp" BuildVersion_UpdateAssemblyVersion="False" BuildVersion_UpdateFileVersion="False" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

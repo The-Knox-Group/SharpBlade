@@ -1,0 +1,23 @@
+This file contains a list of people involved in the development
+of Sharparam.SharpBlade.
+
+If you have questions about the project, please contact anyone
+in the PRIMARY AUTHORS group.
+
+PRIMARY AUTHORS:
+
+ * Adam Hellberg (Sharparam) <sharparam@sharparam.com>
+   - Main Developer
+
+ * Brandon Scott (brandonscott) <brandon.scott03@gmail.com>
+   - Developer
+
+THANKS TO:
+
+ * Bjørn Tore Håvie (itsbth) <itsbth@itsbth.com>
+   - Helping with P/Invoke signatures
+     (Sharparam.SharpBlade/Native/RazerAPI.cs)
+ 
+ * Hugo Bonacci (hugoware)
+   - Enumeration extensions
+     (http://hugoware.net/blog/enumeration-extensions-2-0)
